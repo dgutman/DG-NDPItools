@@ -1,0 +1,43 @@
+for NDPI images
+
+I am using the WINE envirommnet to make our lives easier
+These commands worked from my Ubuntu 10.04LTS 64 bit system
+
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get install wine
+sudo apt-get install winetricks
+
+this will install the runtimes needed so that the application actually runs..
+winetricks vcrun2008 dotnet35
+  
+
+Notes: 
+
+ 'winetricks list-installed' will tell you what packages you already have installed
+  
+
+ 
+
+Running Utility:
+
+  
+wine NDPIUtilities.exe [somescript.txt]
+  
+the script file has two "modes"
+9:08 AM 
+you can either "tile" or thumb
+  
+thumb will get you a layer--- but if it's bigger than 65Kx65K it chokes (bigtiff--> tiff problem)
+  
+but basically something like
+  
+tile /data2/dgutman/TARUN_SLIDES/Training_Slides/HD-1.ndpi /data3/TILE_CACHE/ADRC/TRAINING_SLIDES/HD-1 4096 40
+9:09 AM 
+tile <input_ndpi> <output_dir> <tilesize> <res>
+  
+so the above example will tile the file at 40X resolution
+  
+into 4K x 4K chunks
+  
+
+
